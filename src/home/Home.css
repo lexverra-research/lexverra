@@ -1,0 +1,38 @@
+.hgh{
+    height: 90vh;
+    width: 100vw;
+    padding: 5vh 5vw 0 5vw;
+    /* background-color: rgb(0, 26, 71); */
+    background-image: url('../assets/b6.jpg');
+    background-size: contain ;
+    background-repeat: no-repeat;
+    background-position: right;
+   background-blend-mode: lighten;
+   margin-top: 10vh;
+   margin-bottom: 10vh;
+   position: relative;
+  
+   
+}
+.para{
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+    
+}
+.sheild{
+    color:#1d4ed8;
+    background-color: #D0E1FF;
+    border-radius: 20px;
+    width: 23%;
+    position: relative;
+    left: 33vw;
+}
+.hbutton{
+    default: none;
+    background-color: rgb(0, 26, 71);
+    width: 12vw;
+    color: white;
+    padding: 1vh 1vw;
+    border-radius: 5px;
+    
+}
