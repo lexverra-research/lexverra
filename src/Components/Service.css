@@ -1,28 +1,100 @@
-#service{
+#service {
     margin-top: 20vh;
-    padding: 10vh 5vw 0 5vw ;
-}
-.sdiv2{
+    padding: 10vh 5vw 0 5vw;
+   
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .sdiv2 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 2vw;
-}
-.sdiv2>h2{
+  }
+  
+  .sheading {
     font-size: 2.4rem;
     font-weight: 700;
     color: rgb(0, 26, 71);
-    
-}
-.sbutton{
-    default: none;
+  }
+  
+  .sdesc {
+    color: #4b5563; /* equivalent to Tailwind’s text-gray-600 */
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .service-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .service-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .sbutton {
     background-color: rgb(0, 26, 71);
     color: white;
     position: relative;
-    left: 37vw;
+    left: 32vw;
     margin: 6vh 0;
     padding: 1.5vh 2.5vw;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
     
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  @media (max-width: 767px) {
+    #service {
+        padding: 5vh 2vw 0 2vw;
+        margin-top: 0vh;
+        background-color: rgba(0, 0, 0, 0.044);
+    }
+    
+    .sdiv2 {
+        gap: 1.5vw;
+    }
+    
+    .sheading {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .sdesc {
+        font-size: 0.9rem;
+    }
+    
+    .sbutton {
+        left: 30vw;
+        padding: 1vh 2vw;
+    }
+    
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
 }
+  

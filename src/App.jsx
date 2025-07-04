@@ -1,17 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Service from "./Components/Service"
 import Header from "./header/Header"
 import Home from "./home/Home"
 import About from "./Components/About";
 import Experties from "./Components/Experties";
 import Contact from "./Components/Contact";
+import Modal from "./Modal/Modal";
+import ConsultantForm from "./Form/ConsultantForm";
 
 
 function App() {
   useEffect(() => {
-    // Update page title
-    document.title = "IntellectPro | IP Law & Innovation Strategy";
-    
     // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -31,14 +30,22 @@ function App() {
     });
   }, []);
 
+  // Add modal close functionality
+  const[isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div className="pt-20">
-      <Header />
-      <Home />
+      <Header setModal={showModal} />
+      <Home setModal={showModal}/>
+      {isModalOpen && <Modal setModal={showModal} />}
       <Service />
       <About />
       <Experties/>
       <Contact />
+      <ConsultantForm />
     </div>
   )
 }

@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './Header.css'
 import '../App.css'
-const Header = () => {
+import { Menu, X } from 'lucide-react';
+const Header = ({setModal}) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,20 +21,26 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  
   return (
-    <div className={`header ${scrolled ? "scroll" : ""}`}>
+    <div className={`header ${scrolled ? "scroll" : ""} head`}>
       <div className='logo'><a href="#hero">LEXVERRA</a></div>
-      <div><ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#service">Service</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul></div>
+<div  className={`${isOpen ? 'menu-slide active' : 'menu-slide'} menu`}>
+  <ul>
+    <li onClick={toggleMenu}><a href="#hero" >Home</a></li>
+    <li onClick={toggleMenu}><a href="#service" >Service</a></li>
+    <li onClick={toggleMenu}><a href="#about" >About</a></li>
+    <li onClick={toggleMenu}><a href="#expertise" >Expertise</a></li>
+    <li onClick={toggleMenu}><a href='#contact'>Contact</a></li>
+  </ul>
+</div>
+
       <div>
-        <button>
-          <a href="#contact">Book a Consaltant</a>
+        <button onClick={setModal}>
+          Book a Consaltant
         </button>
+        {isOpen?<X className='menu-icon' onClick={toggleMenu} />:<Menu className='menu-icon'  onClick={toggleMenu}/>}
       </div>
     </div>
   )

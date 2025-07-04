@@ -1,72 +1,42 @@
-import React, { useState } from 'react';
-import './Contact.css';
-import { Mail, MapPin, Phone } from 'lucide-react';
-
-const Contact = () => {
-  const [value, setValue] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setValue({ ...value, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', value);
-    setValue({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      service: '',
-      message: ''
+import React, { use, useRef } from 'react'
+import './Modal.css'
+import ConsultantForm from '../Form/ConsultantForm'
+import { X } from 'lucide-react';
+const Modal = ({setModal}) => {
+    const [value, setValue] = React.useState({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        message: ''
     });
-  };
+const handleChange = (e) => {
+        setValue({ ...value, [e.target.name]: e.target.value });
+    }
+const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form submitted:', value);
+        setValue({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            service: '',
+            message: ''
+        });
+    }
 
+    const ref=useRef(null);
+    const closeModal = (e) => {
+        if(ref.current === e.target) {
+            setModal();
+        }
+    }
   return (
-    <section className="contact-container" id="contact">
-      <div className="contact-info">
-        <h2>Get in Touch</h2>
-        <div className="info-item">
-          <Phone className="icon" />
-          <div>
-            <h3>Phone</h3>
-            <p>+91 8700479671</p>
-          </div>
-        </div>
-        <div className="info-item">
-          <Mail className="icon" />
-          <div>
-            <h3>Email</h3>
-            <p>Contact@lexverraresearch.com</p>
-          </div>
-        </div>
-        <div className="info-item">
-          <MapPin className="icon" />
-          <div>
-            <h3>Office</h3>
-            <p>
-              B-128, First Floor<br />
-              Sector-2, Gautam Buddha Nagar<br />
-              Uttar Pradesh - 201310
-            </p>
-          </div>
-        </div>
-        <hr />
-        <div className="business-hours">
-          <h3>Business Hours</h3>
-          <p>Monday - Friday: 10:00 AM - 6:00 PM</p>
-          <p>Saturday - Sunday: Closed</p>
-        </div>
-      </div>
-
-      <div className="contact-form">
+    <div className='modal-container' ref={ref} onClick={closeModal}>
+        <div className="contact-form modal-form" >
+        <div className="modal-close" onClick={setModal}><X/></div>
         <form onSubmit={handleSubmit}>
           <h1>Request for Consultation</h1>
 
@@ -160,8 +130,8 @@ const Contact = () => {
           <button type="submit">Submit</button>
         </form>
       </div>
-    </section>
-  );
-};
+    </div>
+  )
+}
 
-export default Contact;
+export default Modal

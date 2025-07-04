@@ -24,11 +24,20 @@
     border-radius: 0.5rem; /* rounded-lg */
     margin-bottom: 1.25rem; /* mb-5 */
     transition: all 0.3s ease-in-out; /* transition-all duration-300 */
-    width: 3vw; /* w-12 */
+    width: 2.8rem; /* w-12 */
   }
   
   .card:hover div{
     background-color: #1E40AF; /* group-hover:bg-primary-600 */
     color: white; /* group-hover:text-white */
+  }
+  @media (max-width: 768px) {
+    .card {
+      width: 90%; /* w-full */
+      margin: 0 auto; /* mx-auto */
+    }
+    .card>div {
+      width: 2.8rem; /* w-20 */
+    }
   }
   

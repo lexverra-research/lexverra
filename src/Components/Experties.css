@@ -53,9 +53,41 @@
 .ecard>div>div{
     
     border: 1px solid gray;
-    width: 2.7vw;
-    height: 5vh;
+    width: 2.7rem;
+    height: 2.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
+
+}
+
+
+@media (max-width: 768px) {
+    #expertise>div>div>h1{
+        font-size: 2rem;
+    }
+    .ecard{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 2vh;
+    }
+    .ecard>div{
+        width: 100%;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    .etop{
+        width: 90vw;
+    }
+
+    .ecard>div>div{
+    
+        border: 1px solid gray;
+        width: 10vw;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
 }

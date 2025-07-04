@@ -1,0 +1,34 @@
+name: Sync dist Folder to deplooy Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-dist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Save dist folder to temp
+        run: |
+          rm -rf /tmp/dist
+          cp -r dist /tmp/dist
+
+      - name: Switch to deplooy branch
+        run: |
+          git checkout deplooy || git checkout --orphan deplooy
+          rm -rf dist
+          cp -r /tmp/dist dist
+          git add dist
+          git diff --cached --quiet || git commit -m "Sync dist from main [auto]"
+          git push origin deplooy
