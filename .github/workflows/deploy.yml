@@ -1,0 +1,28 @@
+name: Deploy to lexvera1
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout lexverra
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "lexverra-research"
+          git config --global user.email "billionaireshahid@gmail.com"
+
+      - name: Push to lexvera1
+        run: |
+          git clone https://github.com/lexverra-research/lexvera1.git
+          cp -r build/* lexvera1/  # adjust this if your build folder is different
+          cd lexvera1
+          git add .
+          git commit -m "Deploy from lexverra"
+          git push https://x-access-token:${{ secrets.lexvera_token }}@github.com/lexverra-research/lexvera1.git HEAD:main
