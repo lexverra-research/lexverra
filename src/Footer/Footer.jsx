@@ -9,6 +9,7 @@ const Footer = () => {
       </div>
       <div> second footer</div>
       <div>third</div>
+      <div>fourth</div>
     </div>
   )
 }
