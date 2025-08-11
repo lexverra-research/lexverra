@@ -25,4 +25,4 @@ jobs:
           cd lexvera1
           git add .
           git commit -m "Deploy from lexverra"
-          git push https://x-access-token:${{ secrets.lexvera_token }}@github.com/lexverra-research/lexvera1.git HEAD:main
+          git push https://x-access-token:${{ secrets.LEXVERA_TOKEN }}@github.com/lexverra-research/lexvera1.git HEAD:main
