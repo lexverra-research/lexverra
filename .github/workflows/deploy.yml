@@ -10,19 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout lexverra
+      - name: Checkout lexverra repo
         uses: actions/checkout@v3
 
-      - name: Set up Git
+      - name: Set up Git config
         run: |
           git config --global user.name "lexverra-research"
           git config --global user.email "billionaireshahid@gmail.com"
 
-      - name: Push to lexvera1
+      - name: Clone lexvera1 repo
         run: |
-          git clone https://x-access-token:${{ secrets.LEXVERA_TOKEN }}@github.com/lexverra-research/lexvera1.git
-          cp -r dist/* lexvera1/  # adjust this if your dist folder is different
-          cd lexvera1
+          git clone https://x-access-token:${{ secrets.LEXVERA_TOKEN }}@github.com/lexverra-research/lexvera1.git /tmp/lexvera1
+
+      - name: Copy dist files to lexvera1 repo
+        run: |
+          rm -rf /tmp/lexvera1/*  # Optional: clean old files before copy
+          cp -r dist/* /tmp/lexvera1/
+
+      - name: Commit and push to lexvera1
+        run: |
+          cd /tmp/lexvera1
           git add .
-          git commit -m "Deploy from lexverra"
-          git push https://x-access-token:${{ secrets.LEXVERA_TOKEN }}@github.com/lexverra-research/lexvera1.git HEAD:main
+          git commit -m "Deploy from lexverra" || echo "No changes to commit"
+          git push origin main
