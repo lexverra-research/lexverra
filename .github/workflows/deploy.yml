@@ -21,7 +21,7 @@ jobs:
       - name: Push to lexvera1
         run: |
           git clone https://github.com/lexverra-research/lexvera1.git
-          cp -r build/* lexvera1/  # adjust this if your build folder is different
+          cp -r dist/* lexvera1/  # adjust this if your dist folder is different
           cd lexvera1
           git add .
           git commit -m "Deploy from lexverra"
