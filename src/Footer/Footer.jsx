@@ -7,6 +7,8 @@ const Footer = () => {
       <div>
         new footer
       </div>
+      <div> second footer</div>
+      <div>third</div>
     </div>
   )
 }
