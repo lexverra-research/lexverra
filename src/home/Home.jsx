@@ -16,7 +16,7 @@ const Home = ({setModal}) => {
 
         <div className="hero-content">
           <h3 className="hero-title">
-            Protecting Your Intellectual Assets with Precision and Strategy
+            Protecting Your Intellectual Assets with Precision and Strategy...
           </h3>
           <p className="hero-description">
             We specialize in copyright, trademark, patent, and innovation strategy to secure your intellectual property and drive business growth.
