@@ -20,7 +20,7 @@ jobs:
 
       - name: Push to lexvera1
         run: |
-          git clone https://github.com/lexverra-research/lexvera1.git
+          git clone https://x-access-token:${{ secrets.LEXVERA_TOKEN }}@github.com/lexverra-research/lexvera1.git
           cp -r dist/* lexvera1/  # adjust this if your dist folder is different
           cd lexvera1
           git add .
