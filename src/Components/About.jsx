@@ -55,7 +55,7 @@ const About = () => {
 
   return (
     <section id="about">
-      <div className="about-container">
+      <div className="about-container" >
         <div className="about-left">
           <div className="about-content">
             <h2>Protecting Your Ideas with Strategic Expertise</h2>
@@ -83,7 +83,7 @@ const About = () => {
             <h1>Our IP Strategy Approach</h1>
             {steps.map((step, index) => (
               <div key={index} className="step-row">
-                <div className="step-circle">{step.number}</div>
+                <div className="step-circle"><p>{step.number}</p></div>
                 <div className="step-details">
                   <h2>{step.title}</h2>
                   <p>{step.description}</p>

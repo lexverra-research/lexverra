@@ -1,32 +1,38 @@
 #about {
     margin-top: 8vh;
-    height: 80vh;
-    padding: 7vh 3vw 0;
+    height: auto;
+    /* padding: 7vh 3vw 0; */
     width: 100%;
   }
   
   .about-container {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+    align-content: space-around;
     align-items: center;
+    width: 100%;
     height: 100%;
   }
   
   .about-left {
     display: flex;
-    width: 50%;
-    height: 100%;
+    /* border: 2px solid orange; */
+    height: 90vh;
+    width: clamp(45vmax, 700px, 100vmin);
   }
   
   .about-content > h2 {
-    font-size: 2.3rem;
+    font-size: 4vmin;
     font-weight: 700;
-    color: rgb(0, 26, 71);
+    color: #08545e;
     margin-bottom: 2vh;
     line-height: 1.2;
   }
   
   .about-content > p {
+    font-size: 2.4vmin;
     font-weight: 400;
     color: rgb(0, 26, 71);
     line-height: 1.5;
@@ -55,55 +61,64 @@
   } */
   
   .about-right {
-    width: 50%;
-    height: 100%;
+    width: clamp(45vmax, 700px ,100vmin);
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: 2px solid yellow; */
   }
   
   .strategy-box {
     border: 1px solid gray;
     width: 90%;
     height: 80%;
-    margin-left: 3vw;
+    /* margin-left: 3vw; */
     border-radius: 8px;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.592);
     padding: 3vh 2vw;
     display: flex;
     flex-direction: column;
     gap: 2vh;
+    margin-bottom: 5rem;
     
   }
   
   .strategy-box h1 {
-    font-size: 1.8rem;
+    font-size: 3.8vmin;
     margin-bottom: 1rem;
-    color: rgb(0, 26, 71);
-    height: auto;
+    font-weight: 900;
+    color: #08545e;
+    height: 16%;
     
   }
   
   .step-row {
     display: flex;
+    height: 20%;
     align-items: flex-start;
     gap: 1rem;
     /* margin: 1rem 0; */
   }
   
   .step-circle {
-    width: 40px;
-    height: 40px;
+    width: clamp(3vmax,3rem,3vmax);
+    height: clamp(3vmax,3rem,3vmax);
     background-color: rgba(173, 216, 230, 0.7); /* Light blue */
     border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .step-circle>p{
+    font-size: 2.4vmin;
     font-weight: bold;
     color: rgb(0, 26, 71);
   }
   
   .step-details h2 {
-    font-size: 1.2rem;
+    font-size: 2.2vmin;
     font-weight: 500;
     color: rgb(0, 26, 71);
     margin-bottom: 0.3rem;
@@ -112,6 +127,7 @@
   
   .step-details p {
     margin: 0;
+    font-size: 2.4vmin;
   }
 
   
@@ -146,8 +162,8 @@
       grid-template-columns: 1fr;
     }
     .step-circle {
-        width: 10VW;
-        height: 10VW;
+        width: 6vmax;
+        height: 6vmax;
         background-color: rgba(173, 216, 230, 0.7);
         border-radius: 50%;
         text-align: center;

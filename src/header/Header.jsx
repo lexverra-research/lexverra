@@ -25,7 +25,7 @@ const Header = ({setModal}) => {
   
   return (
     <div className={`header ${scrolled ? "scroll" : ""} head`}>
-      <div className='logo'><a href="#hero">LEXVERRA</a></div>
+      <div className='logo'><a href="#hero"><img src="../assets/lexvera-logo.png" alt="lexvera" /></a></div>
 <div  className={`${isOpen ? 'menu-slide active' : 'menu-slide'} menu`}>
   <ul>
     <li onClick={toggleMenu}><a href="#hero" >Home</a></li>
