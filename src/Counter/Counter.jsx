@@ -24,8 +24,16 @@ const CounterProvider = ({ children }) => {
     }, 16);
   }, []);
 
+  // Reset count to zero (for replay)
+  const resetCount = useCallback((key) => {
+    setCounts((prev) => ({
+      ...prev,
+      [key]: 0,
+    }));
+  }, []);
+
     return(
-        <Context.Provider value={{counts,startCount}}>
+        <Context.Provider value={{counts,startCount,resetCount}}>
             {children}
         </Context.Provider>
     )

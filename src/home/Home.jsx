@@ -1,20 +1,42 @@
-import React, { use, useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Shield } from 'lucide-react';
 import './Home.css';
 import img from '../assets/b6.jpg'; // Ensure this path is correct
 import { Context } from '../Counter/Counter';
 
 const Home = ({setModal}) => {
-  const{counts,startCount}=useContext(Context);
-
+  const{counts,startCount,resetCount}=useContext(Context);
+  const ref=useRef(null);
+  const hasAnimated=useRef(false);
   useEffect(() => {
-    startCount("clients", 500, 3000);
-    startCount("success_rate", 98,3000);
-    startCount("happy_client", 300, 3000);
-  }, [startCount]);
+    const section=ref.current;
+    const observer = new IntersectionObserver(
+      (entries)=>{
+        entries.forEach((entry)=>{
+          if(entry.isIntersecting&& !hasAnimated.current){
+            startCount("clients", 500, 3000);
+            startCount("success_rate", 98,3000);
+            startCount("happy_client", 300, 3000);
+          }else if(!entry.isIntersecting && hasAnimated.current){
+            resetCount("clients");
+            resetCount("success_rate");
+            resetCount("happy_client");
+            hasAnimated.current=false;
+          }
+        })
+      }
+      ,{threshold:.1}
+    )
+    if (section) observer.observe(section);
+
+    return () => {
+      if (section) observer.unobserve(section);
+    };
+    
+  }, [startCount, resetCount]);
 
   return (
-    <section className="hero-section" id="hero">
+    <section className="hero-section" id="hero" ref={ref}>
       <img src={img} alt="hero-background" />
       <div className='containt'>
         <div className="hero-wrapper">
