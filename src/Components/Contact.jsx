@@ -52,9 +52,7 @@ const Contact = () => {
           <div>
             <h3>Office</h3>
             <p>
-              B-128, First Floor<br />
-              Sector-2, Gautam Buddha Nagar<br />
-              Uttar Pradesh - 201310
+            Noida, Uttar Pradesh, India
             </p>
           </div>
         </div>

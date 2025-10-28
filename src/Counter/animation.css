@@ -1,0 +1,31 @@
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: var(--hover-y, 0);
+    left: var(--hover-x, 0);
+    width: 0;
+    height: 0;
+    background: #EDE8D0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.7s ease-in-out, height 0.4s ease-in-out;
+    z-index: -1;
+  }
+  
+  .cta-button.hovering::before {
+    width: 300%;
+    height: 300%;
+  }
+  
+  .cta-button:hover {
+    color: #0ca9b0;
+    background-color: transparent;
+    font-weight: 600;
+  }
+  
+  
+  .cta-button {
+    position: relative;
+    overflow: hidden;
+  }
+  

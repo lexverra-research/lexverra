@@ -1,6 +1,7 @@
 #service {
-    margin-top: 20vh;
-    padding: 10vh 5vw 0 5vw;
+    
+    padding: 20vh 5vw 0 5vw;
+    background-color: rgba(27, 27, 27, 0.196);
    
   }
   
@@ -20,7 +21,7 @@
   .sheading {
     font-size: 2.4rem;
     font-weight: 700;
-    color: rgb(0, 26, 71);
+    color: #08545e;
   }
   
   .sdesc {
@@ -49,7 +50,7 @@
   }
   
   .sbutton {
-    background-color: rgb(0, 26, 71);
+    background-color: #08545e;
     color: white;
     position: relative;
     left: 32vw;
@@ -61,10 +62,13 @@
     
   }
   
+  
   .icon {
     width: 24px;
     height: 24px;
+    color: #08545e;
   }
+  
 
 
   @media (max-width: 767px) {

@@ -6,6 +6,7 @@
   padding: 1rem;
   font-family: Arial, sans-serif;
   color: #333;
+  margin-top: 15vh;
 }
 
 .contact-info,
@@ -129,6 +130,10 @@ button:hover {
 sup {
   color: red;
   font-size: 0.8rem;
+}
+
+.Toastify__toast-container--top-center {
+  margin-top: 18vh; /* slightly more than 15vh */
 }
 
 

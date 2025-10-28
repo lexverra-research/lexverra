@@ -3,7 +3,7 @@ import Service from "./Components/Service"
 import Header from "./header/Header"
 import Home from "./home/Home"
 import About from "./Components/About";
-import Experties from "./Components/Experties";
+import Experties from "./Components/Expertise";
 import Contact from "./Components/Contact";
 import Modal from "./Modal/Modal";
 import ConsultantForm from "./Form/ConsultantForm";
@@ -37,16 +37,7 @@ function App() {
   };
 
   return (
-    <div className="pt-20">
-      <Header setModal={showModal} />
-      <Home setModal={showModal}/>
-      {isModalOpen && <Modal setModal={showModal} />}
-      <Service />
-      <About />
-      <Experties/>
-      <Contact />
-      <ConsultantForm />
-    </div>
+    <></>
   )
 }
 

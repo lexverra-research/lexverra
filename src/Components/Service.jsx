@@ -8,47 +8,51 @@ import {
 } from 'lucide-react';
 import ServiceCard from '../Card/ServiceCard';
 import './Service.css';
+import '../Counter/animation.css';
+import { useContext } from 'react';
+import { Context } from '../Counter/Counter';
 
 const Service = () => {
   const services = [
     {
-      icon: <LightbulbIcon className="icon" />,
+      icon: <LightbulbIcon className="icon" color='#08545e'/>,
       title: 'Patent Filing',
       description:
         'Secure exclusive rights to your inventions with comprehensive patent applications and management.',
     },
     {
-      icon: <Copyright className="icon" />,
+      icon: <Copyright className="icon" color='#08545e'/>,
       title: 'Copyright Protection',
       description:
         'Secure your creative works including literary, artistic, musical, and other intellectual creations.',
     },
     {
-      icon: <TrademarkRegistered className="icon" />,
+      icon: <TrademarkRegistered className="icon" color='#08545e'/>,
       title: 'Trademark Registration',
       description:
         'Protect your brand identity with robust trademark strategies and enforcement.',
     },
     {
-      icon: <Scale className="icon" />,
+      icon: <Scale className="icon" color='#08545e'/>,
       title: 'IP Litigation',
       description:
         'Vigorous representation in disputes involving infringement of intellectual property rights.',
     },
     {
-      icon: <FileSearch className="icon" />,
+      icon: <FileSearch className="icon" color='#08545e'/>,
       title: 'IP Research & Analysis',
       description:
         'Thorough investigation and strategic analysis of intellectual property landscapes and opportunities.',
     },
     {
-      icon: <GraduationCap className="icon" />,
+      icon: <GraduationCap className="icon" color='#08545e'/>,
       title: 'Innovation Strategy',
       description:
         'Develop comprehensive R&D roadmaps aligned with business objectives and market opportunities.',
     },
   ];
-
+// import requirement form context
+  const{btnRef1, handleMouseEnter, handleMouseLeave}=useContext(Context);
   return (
     <section id="service">
       <div className="container">
@@ -68,7 +72,7 @@ const Service = () => {
             />
           ))}
         </div>
-        <button className="sbutton">Explore All Services</button>
+        <button className="sbutton " >Explore All Services</button>
       </div>
     </section>
   );
