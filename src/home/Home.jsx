@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Shield } from 'lucide-react';
 import './Home.css';
 import '../Counter/animation.css'
-import img from '../assets/b6.jpg';
+import video from '../assets/background-video.mp4';
 import { Context } from '../Counter/Counter';
 import gsap from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
@@ -91,7 +91,7 @@ const Home = () => {
   return (
     <div>
       <video autoPlay loop muted playsInline className='back-video'>
-          <source src='../assets/background-video.mp4' type='video/mp4'/>
+          <source src={video} type='video/mp4'/>
         </video>
       <section className="hero-section" id="hero" ref={ref}>
         

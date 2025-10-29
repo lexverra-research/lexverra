@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Header.css'
 import '../App.css'
+import logo from '../assets/lexvera-logo1.png'
 import { Menu, X } from 'lucide-react';
 const Header = ({setModal}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ const Header = ({setModal}) => {
   
   return (
     <div className={`header ${scrolled ? "scroll" : ""} head`}>
-      <div className='logo'><a href="#hero"><img src="../assets/lexvera-logo1.png" alt="lexvera" /></a></div>
+      <div className='logo'><a href="#hero"><img src={logo} alt="lexvera" /></a></div>
 <div  className={`${isOpen ? 'menu-slide active' : 'menu-slide'} menu`}>
   <ul children={scrolled?'ul-scroll':''}>
     <li onClick={toggleMenu}><a href="/" >Home</a></li>
