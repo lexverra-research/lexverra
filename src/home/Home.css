@@ -214,16 +214,16 @@
        margin-left: 2vw;
        max-width: 100%;
        margin-bottom: 1rem;
-       color: #08545e;
+       color:white;
 
 
       }
       .hero-description {
         font-size: calc(1vw + 0.8rem); /* Also fluid */
-        color: #4b5563;
+        color: white;
         max-width: 100%;
         margin-left: 2vh;
-        height: 30%;
+        height: max-content;
         text-align: center;
       }
 
