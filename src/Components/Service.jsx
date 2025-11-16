@@ -22,21 +22,15 @@ const Service = () => {
     },
     {
       icon: <Copyright className="icon" color='#08545e'/>,
-      title: 'Copyright Protection',
+      title: 'Copyright Protection & Management',
       description:
         'Secure your creative works including literary, artistic, musical, and other intellectual creations.',
     },
     {
       icon: <TrademarkRegistered className="icon" color='#08545e'/>,
-      title: 'Trademark Registration',
+      title: 'Trademark Registration & Enforcement',
       description:
         'Protect your brand identity with robust trademark strategies and enforcement.',
-    },
-    {
-      icon: <Scale className="icon" color='#08545e'/>,
-      title: 'IP Litigation',
-      description:
-        'Vigorous representation in disputes involving infringement of intellectual property rights.',
     },
     {
       icon: <FileSearch className="icon" color='#08545e'/>,
@@ -46,7 +40,7 @@ const Service = () => {
     },
     {
       icon: <GraduationCap className="icon" color='#08545e'/>,
-      title: 'Innovation Strategy',
+      title: 'Innovation Strategy & R&D Alignment',
       description:
         'Develop comprehensive R&D roadmaps aligned with business objectives and market opportunities.',
     },
@@ -72,7 +66,7 @@ const Service = () => {
             />
           ))}
         </div>
-        <button className="sbutton " >Explore All Services</button>
+        {/* <button className="sbutton " >Explore All Services</button> */}
       </div>
     </section>
   );
