@@ -12,8 +12,8 @@
    backdrop-filter: blur(6px);
 }
 .modal-form{
-    width: 45rem;
-    height: 37rem;
+    width: 45vmax;
+    height: 85vmin;
 }
 .modal-close{
     position: absolute;

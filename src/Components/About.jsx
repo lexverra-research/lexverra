@@ -56,14 +56,20 @@ const About = () => {
   return (
     <section id="about">
       <div className="about-container" >
+        <div className="about">
+          <h1>About Lexverra</h1>
+        </div>
         <div className="about-left">
           <div className="about-content">
-            <h2>Protecting Your Ideas with Strategic Expertise</h2>
+            <h2>Driving Innovation, Protecting Ideas, Empowering Businesses</h2>
             <p>
-              Founded on principles of excellence and innovation, our firm has been at the forefront of intellectual property law for over two decades. We combine legal expertise with business acumen to deliver results-oriented IP strategies.
+            At Lexverra, we are at the forefront of global Intellectual Property (IP) services, offering innovative solutions that empower businesses, startups, and research organizations to navigate the complex landscape of IP protection and strategic management. As a trusted partner in the digital and technological age, we provide end-to-end services that cover everything from patent research, filing, and analytics to trademark and copyright protection, along with comprehensive legal support.
             </p>
             <p>
-              Our approach integrates deep technical knowledge with commercial insight, ensuring your intellectual assets are not just protected but leveraged for maximum business advantage.
+            We specialize in helping organizations protect their innovations, optimize their intellectual property portfolios, and make informed, strategic IP decisions that drive business growth. Whether you are a technology startup, a multinational corporation, or a cutting-edge research institution, Lexverra provides the insights, expertise, and tools necessary to safeguard your intellectual assets in today’s competitive market.
+            </p>
+            <p>
+            Our team of experts brings a wealth of experience in managing the complexities of IP law and technology commercialization, helping clients secure and maximize the value of their intellectual property across industries. With a focus on innovation, technology advancement, and business strategy, we ensure that your intellectual property is not just protected, but is leveraged as a powerful asset for future growth.
             </p>
             <div className="value-grid">
               {values.map((value, index) => (

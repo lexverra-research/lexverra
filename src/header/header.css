@@ -10,11 +10,12 @@
     align-items:center;
     padding: 0px 20px;
     height: 15vh;
+    overflow: visible;
+    z-index: 5;
     position: fixed;
      width: 100%;
     top: 0;
     left: 0;
-    z-index: 5;
     background-color: #ede8d08c;
     color: white;
     /* color: #08545e; */
@@ -68,13 +69,46 @@
     width: 8vw;
     height: 100%;
     text-align: center;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     /* color: #08545e; */
     color: #08545e;
     font-weight: 700;
     font-size: 1.3vmax;
+    position: relative;
+    
 }
 
+.dropdown-menu {
+  /* display: none; */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: medium;
+  font-weight: 300;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  z-index: 100;
+  width: max-content;
+  background-color: #08545e;
+  
+  padding: .5rem 1rem;
+  text-align: left;
+  transition: all 6s ease-in-out;
+}
+.dropdown-menu>li{
+  padding: 8px 16px;
+  cursor: pointer;
+  color: white;
+}
+.dropdown-menu>li>a{
+  color: white;
+}
+/* li:hover .dropdown-menu {
+  display: block;
+} */
+.dropdown-menu>li>a:hover{
+  color: #e0d38e;
+}
 .menu-icon{
     display: none;
 }
@@ -96,7 +130,7 @@
 /* css for phone */
 @media (max-width: 767px) {
     
-    
+    .header{position: fixed;}
     .header>div>ul.active{
         display: flex;
         flex-direction: column;
@@ -113,9 +147,10 @@
     /* Base menu hidden by default on mobile */
     .menu-slide {
       position: fixed;
-      top: 10vh;
+      top: 7.7vh;
       right: -100%; /* Hide it offscreen */
-      width: 45%;
+      min-width: 50%;
+      width: auto;
       height: 90vh;
       background-color: white;
       display: flex;
@@ -127,9 +162,12 @@
       box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
       
     }
-  
+  .dropdown-menu{
+    right: -15px;
+  }
     .menu-slide.active {
       right: 0; /* Slide it in */
+
     }
   
     .header>div>ul {
@@ -153,6 +191,7 @@
       height: 15%;
       border-bottom: 1px solid #eee;
     }
+    
   
     .menu-icon {
       display: block;
@@ -176,6 +215,7 @@
       height: 8vh;
       width: auto;
     }
+
   
   }
 

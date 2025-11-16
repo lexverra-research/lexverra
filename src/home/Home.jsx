@@ -89,7 +89,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div id='box'>
       <video autoPlay loop muted playsInline className='back-video'>
           <source src={video} type='video/mp4'/>
         </video>

@@ -16,7 +16,7 @@ const Service = () => {
   const services = [
     {
       icon: <LightbulbIcon className="icon" color='#08545e'/>,
-      title: 'Patent Filing',
+      title: 'Patent Protection & Strategy',
       description:
         'Secure exclusive rights to your inventions with comprehensive patent applications and management.',
     },
